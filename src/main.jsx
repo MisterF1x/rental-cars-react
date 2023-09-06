@@ -5,7 +5,7 @@ import App from './App.jsx';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter basename="/rental-cars-react">
+  <BrowserRouter basename="/">
     <React.StrictMode>
       <App />
     </React.StrictMode>
