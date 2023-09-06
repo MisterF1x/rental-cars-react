@@ -31,7 +31,15 @@ export const transformCarsData = data => {
         model,
         img,
         rentalPrice,
-        tags: [...addr, rentalCompany, type, model, mileage, optionCar],
+        mileage,
+        tags: [
+          ...addr,
+          rentalCompany,
+          type,
+          model,
+          mileage.toLocaleString('en-US'),
+          optionCar,
+        ],
       };
     }
   );
