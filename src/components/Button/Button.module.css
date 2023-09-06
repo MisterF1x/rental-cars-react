@@ -1,0 +1,12 @@
+.button {
+  color: var(--color-white);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.43;
+  padding: 12px 0;
+  background-color: var(--primary-color);
+  border-radius: 12px;
+  border: transparent;
+  margin-top: auto;
+}

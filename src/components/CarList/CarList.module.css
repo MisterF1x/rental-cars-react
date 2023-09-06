@@ -1,0 +1,10 @@
+.cardList {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 40px;
+  column-gap: 20px;
+}
+.cardItem {
+  display: flex;
+  width: calc((100% - 60px) / 4);
+}

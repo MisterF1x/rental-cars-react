@@ -1,0 +1,85 @@
+.navbar {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 50px;
+  padding: 15px 0;
+}
+.navlist {
+  display: flex;
+}
+.navlink {
+  color: var(--light-grey-color);
+  cursor: pointer;
+  padding: 0 15px;
+  transition: color var(-duration) var(--cubic-bezier);
+}
+.navlink:hover {
+  color: var(--color-black);
+}
+.container {
+  display: flex;
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: auto;
+}
+.infoWrapper {
+  flex-grow: 1;
+}
+.info {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 30px;
+  font-size: 14px;
+  padding: 5px 20px;
+  background-color: var(--primary-color-darker);
+  color: var(--color-white);
+}
+.info::before {
+  content: '';
+  position: absolute;
+  right: 100%;
+  width: 2000px;
+  bottom: 0;
+  top: 0;
+  background-color: #fff;
+  z-index: -1;
+}
+.info::after {
+  content: '';
+  position: absolute;
+  right: 100%;
+  border-style: solid;
+  border-width: 20px;
+  bottom: 0;
+  border-color: var(--primary-color-darker) var(--primary-color-darker)
+    transparent transparent;
+  background-color: #fff;
+  transition: all 0.3s;
+  z-index: -1;
+}
+.contactList {
+  display: flex;
+  gap: 15px;
+}
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.rentbtn {
+  font-weight: 600;
+  line-height: 1.43;
+  color: var(--color-white);
+  display: inline-flex;
+  padding: 12px 50px;
+  background-color: var(--primary-color);
+  border-radius: var(--boredr-radius);
+  transition: background-color var(-duration) var(--cubic-bezier);
+}
+.rentbtn:hover {
+  background-color: var(--primary-color-darker);
+}
