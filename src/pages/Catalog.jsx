@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { CarList } from '../components/CarList/CarList';
-import { useFetchCars } from '../hooks/useFetchCars';
+import { useFetchCars } from '../hooks/usefetchCars';
 
 const Catalog = () => {
   const { cars, error, isLoading } = useFetchCars();
