@@ -4,6 +4,7 @@ import styles from './Header.module.css';
 import { BsTelephone, BsClock } from 'react-icons/bs';
 import PropTypes from 'prop-types';
 import { Logo } from '../../components/Logo/Logo';
+import { LinkButton } from '../../components/LinkButton/LinkButton';
 
 export const Header = ({ onClick }) => {
   return (
@@ -37,9 +38,7 @@ export const Header = ({ onClick }) => {
                 </a>
               </li>
             </ul>
-            <a className={styles.rentbtn} href="tel:+3809789687566">
-              Rent Car Now
-            </a>
+            <LinkButton>Rent Car Now</LinkButton>
           </nav>
         </div>
       </div>

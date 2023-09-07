@@ -1,16 +1,13 @@
-.button {
-  color: var(--color-white);
-  font-family: inherit;
-  font-size: 14px;
+.buttonLink {
   font-weight: 600;
   line-height: 1.43;
+  color: var(--color-white);
+  display: inline-flex;
   padding: 12px 50px;
   background-color: var(--primary-color);
-  border-radius: 12px;
-  border: transparent;
-  margin-top: auto;
+  border-radius: var(--boredr-radius);
   transition: background-color var(-duration) var(--cubic-bezier);
 }
-.button:hover {
+.buttonLink:hover {
   background-color: var(--primary-color-darker);
 }

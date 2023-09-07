@@ -1,0 +1,13 @@
+.likeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: transparent;
+  border: transparent;
+  z-index: 1;
+  color: var(--color-white);
+}
+
+.likeBtn.liked {
+  color: var(--primary-color);
+}

@@ -1,4 +1,5 @@
 import { Logo } from '../../components/Logo/Logo';
+import { ScrollToTop } from '../../components/ScrollToTop/ScrollToTop';
 import styles from './Footer.module.css';
 import PropTypes from 'prop-types';
 
@@ -58,14 +59,13 @@ export const Footer = ({ scrollToElementRef }) => {
           Copyrights (c) {year} Priceless - Auto Rent. All rights reserved.
         </p>
       </div>
+      <ScrollToTop />
     </footer>
   );
 };
 Footer.propTypes = {
   scrollToElementRef: PropTypes.oneOfType([
-    // Either a function
     PropTypes.func,
-    // Or the instance of a DOM native element (see the note about SSR)
     PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
   ]),
 };

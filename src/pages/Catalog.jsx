@@ -1,22 +1,23 @@
 import { useEffect, useState } from 'react';
 import { CarList } from '../components/CarList/CarList';
 import { useFetchCars } from '../hooks/useFetchCars';
+import { Loading } from '../components/Loading/Loading';
+import { LoadMore } from '../components/LoadMore/LoadMore';
+import { Section } from '../layout/Section/Section';
+import { FilterForm } from '../components/FilterForm/FilterForm';
 
 const Catalog = () => {
   const { cars, error, isLoading } = useFetchCars();
+
   const [displayedCars, setDisplayedCars] = useState([]);
   const itemsPerPage = 8;
-  const [currentPage, setCurrentPage] = useState(2);
 
-  const loadMoreItems = () => {
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
+  const loadMoreItems = (startIndex, endIndex) => {
     const newDisplayedItems = [
       ...displayedCars,
       ...cars.slice(startIndex, endIndex),
     ];
     setDisplayedCars(newDisplayedItems);
-    setCurrentPage(currentPage + 1);
   };
 
   useEffect(() => {
@@ -25,15 +26,28 @@ const Catalog = () => {
   }, [cars]);
 
   if (error) {
-    return <div>Something went wrong!!! Try again later.</div>;
+    return (
+      <div style={{ textAlign: 'center' }}>
+        Something went wrong!!! Try again later.
+      </div>
+    );
   }
   return (
-    <section style={{ paddingTop: '60px', paddingBottom: '60px' }}>
-      {isLoading ? <div>Loading...</div> : <CarList cars={displayedCars} />}
-      {cars.length > displayedCars.length && (
-        <button onClick={loadMoreItems}>Load More</button>
-      )}
-    </section>
+    <>
+      <Section>
+        <FilterForm />
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <>
+            <CarList cars={displayedCars} />
+            {cars.length > displayedCars.length && (
+              <LoadMore onClick={loadMoreItems} itemsPerPage={itemsPerPage} />
+            )}
+          </>
+        )}
+      </Section>
+    </>
   );
 };
 export default Catalog;

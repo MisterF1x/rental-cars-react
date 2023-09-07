@@ -20,7 +20,7 @@
 }
 .container {
   display: flex;
-  max-width: 1200px;
+  width: 1200px;
   padding: 0 15px;
   margin: auto;
 }
@@ -45,7 +45,7 @@
   width: 2000px;
   bottom: 0;
   top: 0;
-  background-color: #fff;
+  background-color: var(--color-white);
   z-index: -1;
 }
 .info::after {
@@ -57,7 +57,7 @@
   bottom: 0;
   border-color: var(--primary-color-darker) var(--primary-color-darker)
     transparent transparent;
-  background-color: #fff;
+  background-color: var(--color-white);
   transition: all 0.3s;
   z-index: -1;
 }

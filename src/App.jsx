@@ -1,6 +1,3 @@
-// import { useState } from 'react';
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { routes } from './constant/routes';
 import './App.css';
@@ -10,8 +7,6 @@ import Catalog from './pages/Catalog';
 import Favorite from './pages/Favorite';
 
 function App() {
-  // const [count, setCount] = useState(0)
-
   return (
     <Routes>
       <Route path={routes.HOME} element={<Layout />}>
