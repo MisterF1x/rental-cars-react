@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BsChevronUp } from 'react-icons/bs';
+import { BiChevronUp } from 'react-icons/bi';
 import styles from './ScrollToTop.module.css';
 
 export const ScrollToTop = () => {
@@ -26,7 +26,7 @@ export const ScrollToTop = () => {
 
   return (
     <div className={styles.scroll}>
-      {showTopBtn && <BsChevronUp onClick={goToTop} />}
+      {showTopBtn && <BiChevronUp onClick={goToTop} />}
     </div>
   );
 };
