@@ -9,6 +9,7 @@ import { determineFilterOption, filterCars } from '../helpers';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Toaster, toast } from 'react-hot-toast';
 import { routes } from '../constant/routes';
+import { errorMessage } from '../constant/errorMessage';
 const ITEMS_PER_PAGE = 8;
 
 const Catalog = () => {
@@ -68,13 +69,13 @@ const Catalog = () => {
       brand = '';
     }
     if (brand === 'All') {
-      return navigate('/catalog');
+      return navigate(routes.CATALOG);
     }
     if (parseInt(values.from) >= parseInt(values.to)) {
-      return toast.error('Invalid mileage range');
+      return toast.error(errorMessage.mileage);
     }
     if (!brand && !price && !values.from && !values.to) {
-      return toast.error('Missing filter criteria');
+      return toast.error(errorMessage.criteria);
     }
     const option = determineFilterOption(brand, price, values);
     const filteredCars = filterCars(cars, {
@@ -87,19 +88,15 @@ const Catalog = () => {
 
     if (filteredCars.length > 0) {
       const queryString = `?brand=${brand}&price=${price}&from=${values.from}&to=${values.to}`;
-      navigate(`/catalog${queryString}`);
+      navigate(`${routes.CATALOG}${queryString}`);
       setDisplayedCars(filteredCars);
     } else {
-      toast.error('No results found due to filtering conditions.');
+      toast.error(errorMessage.noResult);
     }
   };
 
   if (error) {
-    return (
-      <div style={{ textAlign: 'center' }}>
-        Something went wrong!!! Try again later.
-      </div>
-    );
+    return <div style={{ textAlign: 'center' }}>{errorMessage.error}</div>;
   }
   return (
     <>
