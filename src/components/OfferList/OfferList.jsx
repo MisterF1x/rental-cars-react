@@ -11,7 +11,7 @@ export const OfferList = () => {
   useEffect(() => {
     setIsLoading(true);
 
-    fetch('/src/data/offers.json')
+    fetch('/offers.json')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
