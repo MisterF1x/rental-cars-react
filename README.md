@@ -1,6 +1,6 @@
 # Rental Car Site
 
-![App Screenshot](https://github.com/MisterF1x/rental-cars-react/tree/main/public/car.webp)
+![App Screenshot](https://github.com/MisterF1x/rental-cars-react/tree/main/public/car.jpg)
 
 Welcome to the Rental Car Site! This is a React application built with Vite,
 designed to help users find their ideal rental cars easily. The app provides
