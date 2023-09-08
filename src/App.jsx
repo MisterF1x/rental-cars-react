@@ -1,6 +1,5 @@
 import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import { routes } from './constant/routes';
-import './App.css';
 import { Layout } from './layout/Layout/Layout';
 import Home from './pages/Home';
 import Catalog from './pages/Catalog';
