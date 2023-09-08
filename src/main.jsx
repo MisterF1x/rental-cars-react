@@ -6,11 +6,11 @@ import './index.css';
 import { DataProvider } from './components/DataProvider/DataProvider.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  // <React.StrictMode>
-  <BrowserRouter basename="/">
-    <DataProvider>
-      <App />
-    </DataProvider>
-  </BrowserRouter>
-  // </React.StrictMode>
+  <React.StrictMode>
+    <BrowserRouter basename="/">
+      <DataProvider>
+        <App />
+      </DataProvider>
+    </BrowserRouter>
+  </React.StrictMode>
 );
