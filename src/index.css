@@ -6,11 +6,14 @@
   --primary-color-darker: #0b44cd;
   --color-black: #000;
   --color-white: #fff;
+  --color-bg-select: #f7f7fb;
   --dark-white-color: #f9f9f9;
   --light-grey-color: #949494;
   --color-footer-text: #a9aeb3;
+  --color-gray-3: #8a8a89;
   --color-footer-bg: #121820;
   --card-text-color: #121417;
+  --color-option-text: rgba(18, 20, 23, 0.2);
   --color-shadow-box: rgba(0, 0, 0, 0.2);
   --tags-color: rgba(18, 20, 23, 0.5);
   --line-color: rgba(18, 20, 23, 0.1);

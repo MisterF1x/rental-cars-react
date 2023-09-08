@@ -37,7 +37,10 @@ const Favorite = () => {
   return (
     <>
       <Section>
-        <CarList cars={likedCars} onToggleLike={removeFromFavorites} />
+        <div className="wrapper">
+          <CarList cars={likedCars} onToggleLike={removeFromFavorites} />
+          <side className="sidebar"></side>
+        </div>
       </Section>
     </>
   );
