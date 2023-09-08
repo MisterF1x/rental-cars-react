@@ -11,7 +11,7 @@ export const OfferList = () => {
   useEffect(() => {
     setIsLoading(true);
 
-    fetch('src/data/offers.json')
+    fetch('/src/data/offers.json')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -27,7 +27,7 @@ export const OfferList = () => {
         console.error('Error fetching data:', error);
         setIsLoading(false);
       });
-  }, [error]);
+  }, []); // eslint-disable-line
 
   if (isLoading) {
     return <Loading />;
