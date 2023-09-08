@@ -1,15 +1,23 @@
-import { useData } from '../hooks/useData';
+import { AboutUsSection } from '../components/AboutUsSection/AboutUsSection';
+import { BlockForm } from '../components/BlockForm/BlockForm';
+import { HeroSection } from '../components/HeroSection/HeroSection';
+import PropTypes from 'prop-types';
 
-const Home = () => {
-  const data = useData();
-  console.log(data);
+// import { useData } from '../hooks/useData';
+
+const Home = ({ navigate }) => {
+  // const data = useData();
+  // console.log(data);
   return (
     <>
-      <section>
-        <h1>Home</h1>
-      </section>
+      <HeroSection />
+      <BlockForm navigate={navigate} />
+      <AboutUsSection />
     </>
   );
 };
 
 export default Home;
+Home.propTypes = {
+  navigate: PropTypes.func.isRequired,
+};

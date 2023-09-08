@@ -1,0 +1,55 @@
+.hero_container {
+  color: var(--color-white);
+  height: 600px;
+  background-image: linear-gradient(var(--color-bg-box), var(--color-bg-hero)),
+    url(../../assets/images/car.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container {
+  width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.text_container {
+  padding-top: 70px;
+  padding-left: 100px;
+}
+.hero_title {
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 1;
+}
+.hero_subtitle {
+  text-transform: uppercase;
+}
+.hero_price_container {
+  margin-top: 20px;
+}
+.hero_price {
+  font-size: 40px;
+  font-weight: 600;
+}
+.hero_price span {
+  margin-left: 15px;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 400;
+}
+.hero_btn {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: inherit;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-top: 16px;
+}
+.hero_btn::before {
+  content: '';
+  width: 80px;
+  height: 3px;
+  background-color: var(--primary-color);
+  display: flex;
+}

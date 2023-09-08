@@ -13,7 +13,6 @@ const ITEMS_PER_PAGE = 8;
 
 const Catalog = () => {
   const [searchParams] = useSearchParams();
-
   const navigate = useNavigate();
 
   const { cars, error, isLoading } = useData();
@@ -105,17 +104,22 @@ const Catalog = () => {
   return (
     <>
       <Section>
-        <FilterForm onSubmit={handleFilterSubmit} />
-        {isLoading ? (
-          <Loading />
-        ) : (
-          <>
-            <CarList cars={displayedFilteredCars} />
-            {displayedCars.length > displayedFilteredCars.length && (
-              <LoadMore onClick={loadMoreItems} itemsPerPage={ITEMS_PER_PAGE} />
-            )}
-          </>
-        )}
+        <div className="container">
+          <FilterForm onSubmit={handleFilterSubmit} />
+          {isLoading ? (
+            <Loading />
+          ) : (
+            <>
+              <CarList cars={displayedFilteredCars} />
+              {displayedCars.length > displayedFilteredCars.length && (
+                <LoadMore
+                  onClick={loadMoreItems}
+                  itemsPerPage={ITEMS_PER_PAGE}
+                />
+              )}
+            </>
+          )}
+        </div>
       </Section>
       <Toaster position="top-right" />
     </>

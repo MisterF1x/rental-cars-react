@@ -14,9 +14,7 @@ export const Layout = () => {
   return (
     <>
       <Header onClick={scrollToElement} />
-      <main className={styles.main}>
-        <div className={styles.container}>{<Outlet />}</div>
-      </main>
+      <main className={styles.main}>{<Outlet />}</main>
       <Footer scrollToElementRef={scrollToElementRef} />
     </>
   );

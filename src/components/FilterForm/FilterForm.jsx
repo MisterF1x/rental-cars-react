@@ -11,7 +11,7 @@ const initialValue = {
   price: 'To $',
 };
 
-export const FilterForm = ({ onSubmit }) => {
+export const FilterForm = ({ onSubmit, page = null }) => {
   const { cars } = useData();
 
   const prices = cars.map(car => parseFloat(car.rentalPrice.replace('$', '')));
@@ -51,7 +51,10 @@ export const FilterForm = ({ onSubmit }) => {
   };
 
   return (
-    <div className={styles.form_wrapper}>
+    <div
+      className={styles.form_wrapper}
+      style={page ? { marginBottom: '0' } : { marginBottom: '50px' }}
+    >
       <Formik initialValues={{ from: '', to: '' }} onSubmit={handleSubmit}>
         {({ isSubmitting }) => (
           <Form className={styles.form_filter}>
@@ -98,5 +101,6 @@ export const FilterForm = ({ onSubmit }) => {
 };
 
 FilterForm.propTypes = {
+  page: PropTypes.any,
   onSubmit: PropTypes.func.isRequired,
 };

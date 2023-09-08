@@ -28,33 +28,31 @@ const Favorite = () => {
     }
   }, []);
 
-  // if (!likedCars.length) {
-  //   return <h2 style={style}>Add your preferred vehicle to the list.</h2>;
-  // }
-
   return (
     <>
       <Section>
-        <div className="wrapper">
-          {likedCars.length ? (
-            <CarList
-              cars={likedCars}
-              onToggleLike={removeFromFavorites}
-              favorite
-            />
-          ) : (
-            <div>
-              <h2 style={style}>Add your preferred vehicle to the list.</h2>
-            </div>
-          )}
-          <Sidebar>
-            <Widget title="Our Cars">
-              <SliderCarListWidget />
-            </Widget>
-            <Widget title="Offers">
-              <OfferList />
-            </Widget>
-          </Sidebar>
+        <div className="container">
+          <div className="wrapper">
+            {likedCars.length ? (
+              <CarList
+                cars={likedCars}
+                onToggleLike={removeFromFavorites}
+                favorite
+              />
+            ) : (
+              <div>
+                <h2 style={style}>Add your preferred vehicle to the list.</h2>
+              </div>
+            )}
+            <Sidebar>
+              <Widget title="Our Cars">
+                <SliderCarListWidget />
+              </Widget>
+              <Widget title="Offers">
+                <OfferList />
+              </Widget>
+            </Sidebar>
+          </div>
         </div>
       </Section>
     </>

@@ -9,14 +9,17 @@ import { useNavigate } from 'react-router-dom';
 import { routes } from '../../constant/routes';
 import styles from './SliderCarListWidget.module.css';
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
+import { Loading } from '../Loading/Loading';
 
 export const SliderCarListWidget = () => {
-  const { cars, isLoading, error } = useData();
+  const { cars, isLoading } = useData();
   const navigate = useNavigate();
-  console.log(isLoading, error);
   const swiperRef = useRef(null);
 
-  //   if (!reviews.length) return; BiChevronLeft
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
     <>
       <Swiper

@@ -4,6 +4,9 @@
   background-color: var(--dark-white-color);
   border-left: 2px solid var(--primary-color);
 }
+.widget_wrapper:nth-child(n) {
+  min-height: 400px;
+}
 .widget_wrapper:nth-child(2n) {
   min-height: 200px;
 }
