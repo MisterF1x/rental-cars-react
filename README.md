@@ -1,8 +1,6 @@
 # Rental Car Site
 
-<a href="https://elegant-naiad-108ac9.netlify.app" target="_blank" rel="noopener">
-	<img src="./src/assets/images/logo.webp" alt="Priceless rental car" height="60" width="60" />
-</a>
+![App Screenshot](https://github.com/MisterF1x/rental-cars-react/tree/main/public/car.webp)
 
 Welcome to the Rental Car Site! This is a React application built with Vite,
 designed to help users find their ideal rental cars easily. The app provides
