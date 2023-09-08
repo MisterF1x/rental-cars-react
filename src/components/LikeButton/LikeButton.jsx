@@ -31,7 +31,7 @@ export const LikeButton = ({ car, onToggleLike = null }) => {
     <button
       onClick={toggleLike}
       type="button"
-      className={`${styles.likeBtn} ${isLiked ? styles.liked : ''}`}
+      className={`${styles.like_btn} ${isLiked ? styles.liked : ''}`}
     >
       {isLiked ? <AiFillHeart /> : <AiOutlineHeart />}
     </button>

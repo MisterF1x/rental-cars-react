@@ -6,14 +6,14 @@
   padding: 35px;
 }
 
-.imgWrapper {
+.img_wrapper {
   position: relative;
   display: flex;
   height: 248px;
   border-radius: 14px;
   overflow: hidden;
 }
-.imgWrapper::before {
+.img_wrapper::before {
   content: '';
   display: block;
   height: 100%;
@@ -30,7 +30,7 @@
   object-fit: cover;
   object-position: right;
 }
-.titleWrapper {
+.title_wrapper {
   display: flex;
   align-items: baseline;
   margin-top: 14px;
@@ -45,7 +45,7 @@
 .model {
   color: var(--primary-color);
 }
-.tagsList {
+.tags_list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -58,19 +58,19 @@
 .item:last-child > span {
   display: none;
 }
-.descriptionCar {
+.description_car {
   font-size: 14px;
   font-weight: 400;
   line-height: 1.43;
   margin-top: 16px;
 }
-.boxTitle {
+.box_title {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.43;
   margin-top: 24px;
 }
-.conditionList {
+.condition_list {
   display: inline-flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -80,12 +80,12 @@
   margin-top: 8px;
   margin-bottom: 24px;
 }
-.conditionItem {
+.condition_item {
   padding: 7px 14px;
   border-radius: 35px;
   background-color: var(--dark-white-color);
 }
-.conditionItem span {
+.condition_item span {
   color: var(--primary-color);
   font-weight: 600;
 }

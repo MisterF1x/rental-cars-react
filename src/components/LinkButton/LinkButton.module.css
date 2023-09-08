@@ -1,4 +1,4 @@
-.buttonLink {
+.button_link {
   font-weight: 600;
   line-height: 1.43;
   color: var(--color-white);
@@ -8,6 +8,6 @@
   border-radius: var(--boredr-radius);
   transition: background-color var(-duration) var(--cubic-bezier);
 }
-.buttonLink:hover {
+.button_link:hover {
   background-color: var(--primary-color-darker);
 }

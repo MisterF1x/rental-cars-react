@@ -8,6 +8,7 @@ import { useData } from '../hooks/useData';
 import { determineFilterOption, filterCars } from '../helpers';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Toaster, toast } from 'react-hot-toast';
+import { routes } from '../constant/routes';
 const ITEMS_PER_PAGE = 8;
 
 const Catalog = () => {
@@ -43,8 +44,12 @@ const Catalog = () => {
       maxMileage: to,
     });
 
+    if (!filteredCars.length) {
+      navigate(routes.CATALOG);
+      return setDisplayedCars(cars);
+    }
     setDisplayedCars(filteredCars);
-  }, [searchParams, cars]);
+  }, [searchParams, cars, navigate]);
 
   useEffect(() => {
     if (!isLoading && cars.length) {
@@ -64,16 +69,13 @@ const Catalog = () => {
       brand = '';
     }
     if (brand === 'All') {
-      setDisplayedCars(cars);
-      return;
+      return navigate('/catalog');
     }
     if (parseInt(values.from) >= parseInt(values.to)) {
-      toast.error('Invalid mileage range');
-      return;
+      return toast.error('Invalid mileage range');
     }
     if (!brand && !price && !values.from && !values.to) {
-      toast.error('Missing filter criteria');
-      return;
+      return toast.error('Missing filter criteria');
     }
     const option = determineFilterOption(brand, price, values);
     const filteredCars = filterCars(cars, {

@@ -1,4 +1,4 @@
-.loadMore {
+.load_more {
   display: flex;
   border: 2px solid var(--primary-color);
   border-radius: 5px;
@@ -13,6 +13,6 @@
   line-height: 1.5;
   transition: transform var(-duration) var(--cubic-bezier);
 }
-.loadMore:hover {
+.load_more:hover {
   transform: scale(1.05);
 }

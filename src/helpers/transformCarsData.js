@@ -33,6 +33,7 @@ export const transformCarsData = data => {
       year,
       make,
       model,
+      type,
       img,
       rentalPrice,
       mileage,

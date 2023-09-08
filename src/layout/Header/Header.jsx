@@ -11,14 +11,14 @@ export const Header = ({ onClick }) => {
     <header className={styles.header}>
       <div className={styles.container}>
         <Logo />
-        <div className={styles.infoWrapper}>
+        <div className={styles.info_wrapper}>
           <div className={styles.info}>
             <p className={styles.notice}>Save up to 40% Hurry limited offer!</p>
-            <ul className={styles.contactList}>
-              <li className={styles.contactItem}>
+            <ul className={styles.contact_list}>
+              <li className={styles.contact_item}>
                 <BsClock /> Mon-Fri: 09AM to 06PM
               </li>
-              <li className={styles.contactItem}>
+              <li className={styles.contact_item}>
                 <BsTelephone /> +38(073)323-2322
               </li>
             </ul>

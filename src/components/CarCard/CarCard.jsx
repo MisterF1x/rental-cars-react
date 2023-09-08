@@ -27,7 +27,7 @@ export const CarCard = ({ data, onToggleLike }) => {
   return (
     <div className={styles.card}>
       <LikeButton car={data} onToggleLike={onToggleLike} />
-      <div className={styles.imgWrapper}>
+      <div className={styles.img_wrapper}>
         <img
           className={styles.img}
           src={img}
@@ -35,14 +35,14 @@ export const CarCard = ({ data, onToggleLike }) => {
           width={450}
         />
       </div>
-      <div className={styles.infoWrapper}>
-        <div className={styles.titleWrapper}>
+      <div className={styles.info_wrapper}>
+        <div className={styles.title_wrapper}>
           <h2 className={styles.title}>
             {make} <span className={styles.model}>{model}</span>, {year}
           </h2>
           <p>{rentalPrice}</p>
         </div>
-        <ul className={styles.tagsList}>
+        <ul className={styles.tags_list}>
           {tags.map((tag, inx) => (
             <li className={styles.item} key={`${inx}-m`}>
               {tag} <span style={style}></span>

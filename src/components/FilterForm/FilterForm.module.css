@@ -1,21 +1,21 @@
-.formWrapper {
+.form_wrapper {
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
 }
-.formFilter {
+.form_filter {
   display: flex;
   gap: 18px;
 }
-.selectGroup h3,
-.groupWrapper h3 {
+.select_group h3,
+.group_wrapper h3 {
   color: var(--color-gray-3);
   font-size: 14px;
   font-weight: 500;
   line-height: 1.29;
   margin-bottom: 8px;
 }
-.selectGroup:nth-child(2) > div {
+.select_group:nth-child(2) > div {
   min-width: 125px;
 }
 
@@ -37,7 +37,7 @@ select:focus + .focus {
   border: 2px solid var(--primary-color-darker);
   border-radius: inherit;
 }
-.searchBtn {
+.search_btn {
   color: var(--color-white);
   font-family: inherit;
   font-size: 14px;
@@ -50,13 +50,13 @@ select:focus + .focus {
   margin-top: auto;
   transition: background-color var(-duration) var(--cubic-bezier);
 }
-.searchBtn:hover {
+.search_btn:hover {
   background-color: var(--primary-color-darker);
 }
-.searchBtn:disabled {
+.search_btn:disabled {
   background-color: var(--color-footer-text);
 }
-.groupField {
+.group_field {
   display: flex;
   width: 320px;
   padding: 0 24px;

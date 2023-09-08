@@ -17,6 +17,7 @@
   --color-shadow-box: rgba(0, 0, 0, 0.2);
   --tags-color: rgba(18, 20, 23, 0.5);
   --line-color: rgba(18, 20, 23, 0.1);
+  --card-price-text-color: #434d57;
   --boredr-radius: 12px;
   --cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
   --duration: 250ms;
@@ -74,3 +75,12 @@ a.active {
 .modal-open {
   overflow: hidden;
 }
+.wrapper {
+  display: grid;
+  grid-template-columns: 860px 300px;
+  gap: 40px;
+  align-items: start;
+}
+/* .wrapper ul li {
+  width: calc((100% - 40px) / 3);
+} */

@@ -11,7 +11,7 @@ export const CustomSelect = ({ options, value, onChange, isOpen, toggle }) => {
   return (
     <div className={styles.select}>
       <div
-        className={`${styles.selectHeader} ${isOpen ? styles.open : ''}`}
+        className={`${styles.select_header} ${isOpen ? styles.open : ''}`}
         onClick={toggle}
       >
         {value}

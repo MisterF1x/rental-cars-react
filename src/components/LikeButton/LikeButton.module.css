@@ -1,4 +1,4 @@
-.likeBtn {
+.like_btn {
   position: absolute;
   top: 16px;
   right: 16px;
@@ -8,6 +8,6 @@
   color: var(--color-white);
 }
 
-.likeBtn.liked {
+.like_btn.liked {
   color: var(--primary-color);
 }

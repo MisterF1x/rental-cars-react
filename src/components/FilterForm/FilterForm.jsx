@@ -51,11 +51,11 @@ export const FilterForm = ({ onSubmit }) => {
   };
 
   return (
-    <div className={styles.formWrapper}>
+    <div className={styles.form_wrapper}>
       <Formik initialValues={{ from: '', to: '' }} onSubmit={handleSubmit}>
         {({ isSubmitting }) => (
-          <Form className={styles.formFilter}>
-            <div className={styles.selectGroup}>
+          <Form className={styles.form_filter}>
+            <div className={styles.select_group}>
               <h3>Car Brand</h3>
               <CustomSelect
                 options={optionsBrand}
@@ -65,7 +65,7 @@ export const FilterForm = ({ onSubmit }) => {
                 toggle={toggleSelectBrand}
               />
             </div>
-            <div className={styles.selectGroup}>
+            <div className={styles.select_group}>
               <h3>Price/ 1 hour</h3>
               <CustomSelect
                 options={optionsPrice}
@@ -75,9 +75,9 @@ export const FilterForm = ({ onSubmit }) => {
                 toggle={toggleSelectPrice}
               />
             </div>
-            <div className={styles.groupWrapper}>
+            <div className={styles.group_wrapper}>
               <h3>Сar mileage / km</h3>
-              <div className={styles.groupField}>
+              <div className={styles.group_field}>
                 <Field type="text" name="from" placeholder="From" />
                 <Field type="text" name="to" placeholder="To" />
               </div>
@@ -85,7 +85,7 @@ export const FilterForm = ({ onSubmit }) => {
 
             <button
               disabled={isSubmitting}
-              className={styles.searchBtn}
+              className={styles.search_btn}
               type="submit"
             >
               Search

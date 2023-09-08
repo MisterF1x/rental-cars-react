@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react';
 import { CarList } from '../components/CarList/CarList';
-import { Section } from '../layout/Section/Section';
+import { Sidebar, Section } from '../layout';
+import { Widget } from '../components/Widget/Widget';
+import { OfferList } from '../components/OfferList/OfferList';
+import { SliderCarListWidget } from '../components/SliderCarListWidget/SliderCarListWidget';
 
 const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: '100%',
   textAlign: 'center',
 };
 
@@ -30,16 +28,33 @@ const Favorite = () => {
     }
   }, []);
 
-  if (!likedCars.length) {
-    return <h2 style={style}>Add your preferred vehicle to the list.</h2>;
-  }
+  // if (!likedCars.length) {
+  //   return <h2 style={style}>Add your preferred vehicle to the list.</h2>;
+  // }
 
   return (
     <>
       <Section>
         <div className="wrapper">
-          <CarList cars={likedCars} onToggleLike={removeFromFavorites} />
-          <side className="sidebar"></side>
+          {likedCars.length ? (
+            <CarList
+              cars={likedCars}
+              onToggleLike={removeFromFavorites}
+              favorite
+            />
+          ) : (
+            <div>
+              <h2 style={style}>Add your preferred vehicle to the list.</h2>
+            </div>
+          )}
+          <Sidebar>
+            <Widget title="Our Cars">
+              <SliderCarListWidget />
+            </Widget>
+            <Widget title="Offers">
+              <OfferList />
+            </Widget>
+          </Sidebar>
         </div>
       </Section>
     </>

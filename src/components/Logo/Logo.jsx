@@ -6,7 +6,7 @@ import styles from './Logo.module.css';
 export const Logo = ({ type = 'standart' }) => {
   return (
     <div
-      className={styles.logocontainer}
+      className={styles.logo_container}
       style={{ minHeight: type === 'standart' ? '120px' : '' }}
     >
       <NavLink to={'/'}>

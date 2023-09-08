@@ -10,7 +10,7 @@
   transform: translateY(-50%);
   right: 18px;
 }
-.selectHeader {
+.select_header {
   border-radius: 14px;
   padding: 14px 18px;
   font-size: 18px;
@@ -21,7 +21,7 @@
   cursor: pointer;
 }
 
-.selectHeader.open {
+.select_header.open {
   border-bottom: none;
 }
 

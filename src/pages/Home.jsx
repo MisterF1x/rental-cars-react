@@ -1,8 +1,8 @@
-// import { useData } from '../hooks/useData';
+import { useData } from '../hooks/useData';
 
 const Home = () => {
-  // const data = useData();
-
+  const data = useData();
+  console.log(data);
   return (
     <>
       <section>

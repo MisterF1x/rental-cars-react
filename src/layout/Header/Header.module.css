@@ -24,7 +24,7 @@
   padding: 0 15px;
   margin: auto;
 }
-.infoWrapper {
+.info_wrapper {
   flex-grow: 1;
 }
 .info {
@@ -61,11 +61,11 @@
   transition: all 0.3s;
   z-index: -1;
 }
-.contactList {
+.contact_list {
   display: flex;
   gap: 15px;
 }
-.contactItem {
+.contact_item {
   display: flex;
   align-items: center;
   gap: 7px;

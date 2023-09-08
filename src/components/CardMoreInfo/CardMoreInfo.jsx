@@ -25,7 +25,7 @@ export const CardMoreInfo = ({ car }) => {
 
   return (
     <div className={styles.card}>
-      <div className={styles.imgWrapper}>
+      <div className={styles.img_wrapper}>
         <img
           className={styles.img}
           src={img}
@@ -33,23 +33,23 @@ export const CardMoreInfo = ({ car }) => {
           width={800}
         />
       </div>
-      <div className={styles.infoWrapper}>
-        <div className={styles.titleWrapper}>
+      <div className={styles.info_wrapper}>
+        <div className={styles.title_wrapper}>
           <h2 className={styles.title}>
             {make} <span className={styles.model}>{model}</span>, {year}
           </h2>
         </div>
-        <ul className={styles.tagsList}>
+        <ul className={styles.tags_list}>
           {detailedTags.map((tag, inx) => (
             <li className={styles.item} key={`${inx}-m`}>
               {tag} <span style={style}></span>
             </li>
           ))}
         </ul>
-        <p className={styles.descriptionCar}>{description}</p>
+        <p className={styles.description_car}>{description}</p>
         <div>
-          <h3 className={styles.boxTitle}>Accessories and functionalities:</h3>
-          <ul className={styles.tagsList}>
+          <h3 className={styles.box_title}>Accessories and functionalities:</h3>
+          <ul className={styles.tags_list}>
             {[...accessories, ...functionalities].map((tag, inx) => (
               <li className={styles.item} key={`${inx}-f`}>
                 {tag} <span style={style}></span>
@@ -58,17 +58,17 @@ export const CardMoreInfo = ({ car }) => {
           </ul>
         </div>
         <div>
-          <h3 className={styles.boxTitle}>Rental Conditions:</h3>
-          <ul className={styles.conditionList}>
+          <h3 className={styles.box_title}>Rental Conditions:</h3>
+          <ul className={styles.condition_list}>
             {rentConditions.map((tag, inx) => (
-              <li className={styles.conditionItem} key={`${inx}-c`}>
+              <li className={styles.condition_item} key={`${inx}-c`}>
                 {tag}
               </li>
             ))}
-            <li className={styles.conditionItem}>
+            <li className={styles.condition_item}>
               Mileage: <span>{mileage.toLocaleString('en-US')}</span>
             </li>
-            <li className={styles.conditionItem}>
+            <li className={styles.condition_item}>
               Price: <span>{rentalPrice}</span>
             </li>
           </ul>

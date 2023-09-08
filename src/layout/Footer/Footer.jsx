@@ -8,17 +8,17 @@ export const Footer = ({ scrollToElementRef }) => {
   return (
     <footer ref={scrollToElementRef} id="footer" className={styles.footer}>
       <div className={styles.container}>
-        <div className={styles.footerwrapper}>
-          <div className={styles.footerAbout}>
+        <div className={styles.footer_wrapper}>
+          <div className={styles.footer_about}>
             <Logo type="white" />
-            <p className={styles.footerDescription}>
+            <p className={styles.footer_description}>
               Enjoy cost-effective travel with our budget rental cars, without
               compromising on quality. Choose from our eco-friendly rental cars
               and contribute to a greener planet during your travels.
             </p>
           </div>
-          <div className={styles.footerInfo}>
-            <h3 className={styles.footerTitle}>Contact Info</h3>
+          <div className={styles.footer_info}>
+            <h3 className={styles.footer_title}>Contact Info</h3>
             <ul>
               <li>
                 Car Showroom:
@@ -37,8 +37,8 @@ export const Footer = ({ scrollToElementRef }) => {
               </li>
             </ul>
           </div>
-          <div className={styles.footerSchedule}>
-            <h3 className={styles.footerTitle}>Service Hour</h3>
+          <div className={styles.footer_schedule}>
+            <h3 className={styles.footer_title}>Service Hour</h3>
             <ul>
               <li>
                 Monday-Fridat:{' '}

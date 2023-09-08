@@ -1,0 +1,20 @@
+.offer_link {
+  display: flex;
+  gap: 8px;
+  color: var(--card-text-color);
+}
+.offer_img_wrapper {
+  display: flex;
+  overflow: hidden;
+  height: 55px;
+  min-width: 55px;
+  border-radius: 6px;
+}
+.offer_img_wrapper img {
+  object-fit: cover;
+}
+.offer_description {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.25;
+}

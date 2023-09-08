@@ -12,7 +12,7 @@ export const LoadMore = ({ onClick, itemsPerPage }) => {
   };
 
   return (
-    <button className={styles.loadMore} onClick={onClickLoadMore}>
+    <button className={styles.load_more} onClick={onClickLoadMore}>
       Load More
     </button>
   );

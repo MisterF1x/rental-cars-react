@@ -1,10 +1,13 @@
-.cardList {
+.card_list {
   display: flex;
   flex-wrap: wrap;
   row-gap: 40px;
   column-gap: 20px;
 }
-.cardItem {
+.card_item {
   display: flex;
   width: calc((100% - 60px) / 4);
+}
+.card_item.card_item_favorite {
+  width: calc((100% - 40px) / 3);
 }

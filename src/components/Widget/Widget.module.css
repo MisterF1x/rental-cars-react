@@ -1,0 +1,16 @@
+.widget_wrapper {
+  position: relative;
+  padding: 25px;
+  background-color: var(--dark-white-color);
+  border-left: 2px solid var(--primary-color);
+}
+.widget_wrapper:nth-child(2n) {
+  min-height: 200px;
+}
+.widget_title {
+  color: var(--card-text-color);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.33;
+  margin-bottom: 15px;
+}

@@ -37,7 +37,7 @@ export const Modal = ({ onClose, children, isModalOpen }) => {
   return createPortal(
     <Backdrop onClick={onClickOverlay}>
       <div className={styles.modal}>
-        <button onClick={onClose} className={styles.closeBtn}>
+        <button onClick={onClose} className={styles.close_btn}>
           <GrClose />
         </button>
         {children}

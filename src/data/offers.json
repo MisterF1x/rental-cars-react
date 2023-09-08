@@ -1,0 +1,17 @@
+[
+      {
+        "id": 11333,
+        "img": "https://res.cloudinary.com/ditdqzoio/image/upload/v1687252635/cars/volvo_xc90.jpg",
+        "offer": "Rent a Volvo and get 20% off!"
+      },
+      {
+        "id": 11663,
+        "img": "https://res.cloudinary.com/ditdqzoio/image/upload/v1687252635/cars/subaru_outback.jpg",
+        "offer": " Rent any SUV and get 10% Off!"
+      },
+      {
+        "id": 119933,
+        "img": "https://media.gettyimages.com/id/459011703/photo/audi-a4-quattro-2013.jpg?s=612x612&w=0&k=20&c=kB1rrjCpMb0Xda4soJRPUm_uZ5oDrBVsvW6TajV_Pac=",
+        "offer": "Rent Audi and get 15% Off!"
+      }
+]
