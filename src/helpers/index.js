@@ -1,3 +1,4 @@
+import { checkErrors } from './checkErrors';
 import { determineFilterOption } from './determineFilterOption';
 import { filterCars } from './filterCars';
 import { menu } from './navigation';
@@ -10,4 +11,5 @@ export {
   menu,
   createSelectOptions,
   transformCarsData,
+  checkErrors,
 };

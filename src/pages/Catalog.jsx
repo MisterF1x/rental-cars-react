@@ -5,7 +5,7 @@ import { LoadMore } from '../components/LoadMore/LoadMore';
 import { Section } from '../layout/Section/Section';
 import { FilterForm } from '../components/FilterForm/FilterForm';
 import { useData } from '../hooks/useData';
-import { determineFilterOption, filterCars } from '../helpers';
+import { checkErrors, determineFilterOption, filterCars } from '../helpers';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Toaster, toast } from 'react-hot-toast';
 import { routes } from '../constant/routes';
@@ -68,30 +68,28 @@ const Catalog = () => {
     if (brand === 'Select the brand') {
       brand = '';
     }
-    if (brand === 'All') {
-      return navigate(routes.CATALOG);
-    }
-    if (parseInt(values.from) >= parseInt(values.to)) {
-      return toast.error(errorMessage.mileage);
-    }
-    if (!brand && !price && !values.from && !values.to) {
-      return toast.error(errorMessage.criteria);
-    }
-    const option = determineFilterOption(brand, price, values);
-    const filteredCars = filterCars(cars, {
-      by: option,
-      brand,
-      price,
-      minMileage: values.from,
-      maxMileage: values.to,
-    });
+    const error = checkErrors(brand, price, values);
+    if (!error) {
+      if (brand === 'All') {
+        return navigate(routes.CATALOG);
+      }
 
-    if (filteredCars.length > 0) {
-      const queryString = `?brand=${brand}&price=${price}&from=${values.from}&to=${values.to}`;
-      navigate(`${routes.CATALOG}${queryString}`);
-      setDisplayedCars(filteredCars);
-    } else {
-      toast.error(errorMessage.noResult);
+      const option = determineFilterOption(brand, price, values);
+      const filteredCars = filterCars(cars, {
+        by: option,
+        brand,
+        price,
+        minMileage: values.from,
+        maxMileage: values.to,
+      });
+
+      if (filteredCars.length > 0) {
+        const queryString = `?brand=${brand}&price=${price}&from=${values.from}&to=${values.to}`;
+        navigate(`${routes.CATALOG}${queryString}`);
+        setDisplayedCars(filteredCars);
+      } else {
+        toast.error(errorMessage.noResult);
+      }
     }
   };
 
