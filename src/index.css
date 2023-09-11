@@ -92,3 +92,6 @@ a.active {
   padding: 0 15px;
   margin: 0 auto;
 }
+.swiper.swiper-horizontal {
+  padding: 5px;
+}

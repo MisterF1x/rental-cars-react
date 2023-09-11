@@ -8,16 +8,25 @@ import { errorMessage } from '../../constant/errorMessage';
 
 export const BlockForm = ({ navigate }) => {
   const handleFilterSubmit = (brand, price, values, action) => {
+    action.resetForm();
+    action.setSubmitting(false);
+
+    if (parseInt(values.from) >= parseInt(values.to)) {
+      return toast.error(errorMessage.mileage);
+    }
+    if (!parseInt(values.from) || !parseInt(values.to)) {
+      return toast.error(errorMessage.number);
+    }
+    if (!brand && !price && !values.from && !values.from) {
+      return toast.error(errorMessage.all);
+    }
     if (brand === 'Select the brand') {
       brand = '';
     }
     if (typeof price === 'string') {
       price = '';
     }
-    action.setSubmitting(false);
-    if (!brand && !price && !values.from && !values.from) {
-      return toast.error(errorMessage.all);
-    }
+
     const params = { brand, price, from: values.from, to: values.to };
 
     navigate({

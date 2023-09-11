@@ -50,3 +50,6 @@
   display: flex;
   justify-content: flex-end;
 }
+.about_img_container img {
+  object-fit: cover;
+}

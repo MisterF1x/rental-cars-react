@@ -53,3 +53,8 @@
   background-color: var(--primary-color);
   display: flex;
 }
+@media (max-width: 1200px) {
+  .hero_container {
+    width: 1230px;
+  }
+}
