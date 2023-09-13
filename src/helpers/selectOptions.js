@@ -1,5 +1,5 @@
 export const createSelectOptions = prices => {
-  const minPrice = Math.min(...prices) - 5;
+  const minPrice = Math.min(...prices) + 5;
   const maxPrice = Math.max(...prices) + 5;
 
   const options = [];

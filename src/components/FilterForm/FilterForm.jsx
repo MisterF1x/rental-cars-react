@@ -1,15 +1,10 @@
 import { Field, Form, Formik } from 'formik';
 import styles from './FilterForm.module.css';
-import { CustomSelect } from '../CustomSelect/CustomSelect';
 import { useState } from 'react';
 import { useData } from '../../hooks/useData';
 import { createSelectOptions } from '../../helpers/selectOptions';
 import PropTypes from 'prop-types';
-
-const initialValue = {
-  brand: 'Select the brand',
-  price: 'To $',
-};
+import { Select } from '../Select/Select';
 
 export const FilterForm = ({ onSubmit, page = null }) => {
   const { cars } = useData();
@@ -19,24 +14,8 @@ export const FilterForm = ({ onSubmit, page = null }) => {
   const brands = cars.map(car => car.make);
   const optionsBrand = ['All', ...new Set(brands)];
 
-  const [selectedOptionBrand, setSelectedOptionBrand] = useState(
-    initialValue.brand
-  );
-  const [selectedOptionPrice, setSelectedOptionPrice] = useState(
-    initialValue.price
-  );
-  const [isOpenBrand, setIsOpenBrand] = useState(false);
-  const [isOpenPrice, setIsOpenPrice] = useState(false);
-
-  const toggleSelectBrand = () => {
-    setIsOpenBrand(!isOpenBrand);
-    setIsOpenPrice(false);
-  };
-
-  const toggleSelectPrice = () => {
-    setIsOpenPrice(!isOpenPrice);
-    setIsOpenBrand(false);
-  };
+  const [selectedOptionBrand, setSelectedOptionBrand] = useState('');
+  const [selectedOptionPrice, setSelectedOptionPrice] = useState('');
 
   const handleSelectChangeBrand = newValue => {
     setSelectedOptionBrand(newValue);
@@ -46,8 +25,8 @@ export const FilterForm = ({ onSubmit, page = null }) => {
   };
   const handleSubmit = (value, action) => {
     onSubmit(selectedOptionBrand, selectedOptionPrice, value, action);
-    setSelectedOptionBrand(initialValue.brand);
-    setSelectedOptionPrice(initialValue.price);
+    setSelectedOptionBrand('');
+    setSelectedOptionPrice('');
   };
 
   return (
@@ -60,22 +39,21 @@ export const FilterForm = ({ onSubmit, page = null }) => {
           <Form className={styles.form_filter}>
             <div className={styles.select_group}>
               <h3>Car Brand</h3>
-              <CustomSelect
+              <Select
                 options={optionsBrand}
-                value={selectedOptionBrand}
+                selected={selectedOptionBrand || null}
                 onChange={handleSelectChangeBrand}
-                isOpen={isOpenBrand}
-                toggle={toggleSelectBrand}
+                placeholder="Select the brand"
               />
             </div>
             <div className={styles.select_group}>
               <h3>Price/ 1 hour</h3>
-              <CustomSelect
+              <Select
                 options={optionsPrice}
-                value={selectedOptionPrice}
+                selected={selectedOptionPrice || null}
                 onChange={handleSelectChangePrice}
-                isOpen={isOpenPrice}
-                toggle={toggleSelectPrice}
+                placeholder="To $"
+                mode="price"
               />
             </div>
             <div className={styles.group_wrapper}>

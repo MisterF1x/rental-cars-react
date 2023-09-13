@@ -2,7 +2,8 @@ import { Outlet } from 'react-router-dom';
 import { Header } from '../Header/Header';
 import { Footer } from '../Footer/Footer';
 import styles from './Layout.module.css';
-import { useRef } from 'react';
+import { Suspense, useRef } from 'react';
+import { Loading } from '../../components/Loading/Loading';
 
 export const Layout = () => {
   const scrollToElementRef = useRef(null);
@@ -14,7 +15,11 @@ export const Layout = () => {
   return (
     <>
       <Header onClick={scrollToElement} />
-      <main className={styles.main}>{<Outlet />}</main>
+      <main className={styles.main}>
+        <Suspense fallback={<Loading />}>
+          <Outlet />
+        </Suspense>
+      </main>
       <Footer scrollToElementRef={scrollToElementRef} />
     </>
   );

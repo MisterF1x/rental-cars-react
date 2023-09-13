@@ -1,9 +1,10 @@
+import { lazy } from 'react';
 import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import { routes } from './constant/routes';
 import { Layout } from './layout/Layout/Layout';
-import Home from './pages/Home';
-import Catalog from './pages/Catalog';
-import Favorite from './pages/Favorite';
+const Home = lazy(() => import('./pages/Home'));
+const Catalog = lazy(() => import('./pages/Catalog'));
+const Favorite = lazy(() => import('./pages/Favorite'));
 
 function App() {
   const navigate = useNavigate();

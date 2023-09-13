@@ -1,0 +1,22 @@
+/* .options.open {
+  display: block;
+  width: 100%;
+  height: 272px;
+  overflow-y: auto;
+} */
+
+.option {
+  color: var(--color-option-text);
+  padding: 8px 18px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  transition: color var(--duration) var(--cubic-bezier),
+    background-color var(--duration) var(--cubic-bezier);
+}
+
+.option:hover {
+  color: var(--color-black);
+  background-color: var(--dark-white-color);
+}

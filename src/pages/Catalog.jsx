@@ -18,7 +18,7 @@ const Catalog = () => {
 
   const { cars, error, isLoading } = useData();
 
-  const [displayedCars, setDisplayedCars] = useState(cars);
+  const [displayedCars, setDisplayedCars] = useState([]);
   const [displayedFilteredCars, setDisplayedFilteredCars] = useState([]);
 
   const loadMoreItems = (startIndex, endIndex) => {
@@ -36,6 +36,7 @@ const Catalog = () => {
     const to = searchParams.get('to') || '';
 
     const option = determineFilterOption(brand, price, { from, to });
+
     const filteredCars = filterCars(cars, {
       by: option,
       brand,
@@ -62,12 +63,6 @@ const Catalog = () => {
     action.resetForm();
     action.setSubmitting(false);
 
-    if (typeof price === 'string') {
-      price = '';
-    }
-    if (brand === 'Select the brand') {
-      brand = '';
-    }
     const error = checkErrors(brand, price, values);
     if (!error) {
       if (brand === 'All') {
@@ -75,6 +70,7 @@ const Catalog = () => {
       }
 
       const option = determineFilterOption(brand, price, values);
+
       const filteredCars = filterCars(cars, {
         by: option,
         brand,

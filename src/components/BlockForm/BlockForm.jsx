@@ -10,12 +10,6 @@ export const BlockForm = ({ navigate }) => {
     action.resetForm();
     action.setSubmitting(false);
 
-    if (brand === 'Select the brand') {
-      brand = '';
-    }
-    if (typeof price === 'string') {
-      price = '';
-    }
     const error = checkErrors(brand, price, values);
     if (!error) {
       const params = { brand, price, from: values.from, to: values.to };
