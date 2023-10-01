@@ -28,7 +28,7 @@
 }
 .img {
   object-fit: cover;
-  object-position: right;
+  object-position: center;
 }
 .title_wrapper {
   display: flex;
