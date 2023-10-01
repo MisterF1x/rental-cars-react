@@ -78,7 +78,6 @@ const Catalog = () => {
         minMileage: values.from,
         maxMileage: values.to,
       });
-
       if (filteredCars.length > 0) {
         const queryString = `?brand=${brand}&price=${price}&from=${values.from}&to=${values.to}`;
         navigate(`${routes.CATALOG}${queryString}`);
